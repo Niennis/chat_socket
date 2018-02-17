@@ -3,6 +3,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <META HTTP-EQUIV='Content-Security-Policy' CONTENT="default-src *;">    
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/main.css">
   <title>Document</title>
@@ -35,7 +36,7 @@
   <script src="assets/js/bootstrap.min.js"></script>
   <script>
     $(function () {
-      var socket = io('https://34.227.11.223:3000');
+      var socket = io('http://34.227.11.223:3000');
       $('form').submit(function(){
         socket.emit('chat message', $('#m').val());
         $('#m').val('');
