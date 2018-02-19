@@ -36,12 +36,7 @@ form button {
     background: #eee; 
 }
 
-.ppl{
-    color: green;
-}
-.you{
-    color: blue;
-}
+
 
 section{
     margin-top: 5em;
@@ -152,9 +147,17 @@ h5{
 #messages li { 
   padding: 2vh; 
   margin: 1vh;
-  background-color:rgba(178, 223, 220, 1);
+  background-color:rgb(178, 181, 223);
   border-radius: 0.5vh;
 }
 #messages li:nth-child(odd) { 
   background-color: rgba(255, 255, 255, 1); 
+}
+.ppl{
+  color: teal;
+  font-weight: bold;
+}
+.you{
+  color: salmon;
+  font-weight: bold;  
 }
