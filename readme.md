@@ -21,4 +21,4 @@
 
 ## Heroku
 
-[Chat en Keroku!](https://lab-chats.herokuapp.com/)
+[Chat en Heroku](https://lab-chats.herokuapp.com/)
