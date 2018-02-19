@@ -5,46 +5,79 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/main.css">
-  <title>Document</title>
+  <title>Chat</title>
 </head>
 <body>
-<div class="row">
-  <div class="col-12">
-    <ul id="messages"></ul>
-  </div>
-</div>
-<div class="row">
-  <div class="col-12">
-    <form action="">
-      <div class="row">
-        <div class="col-10">
-          <input id="m" autocomplete="off" />
-        </div>
-        <div class="col-2">
-          <button class="btn btn-primary">Send</button>
-        </div>
-      </div>
-    </form>    
-  </div>
-</div>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="#">ChatLab</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#start">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#chat">My chat</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="#start">Disconnect</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0 searchUser" type="submit">Search user</button>
+      </form>
+    </div>
+  </nav>
+  <section id="start" class="container">
+    <div id="nickWrap" class="row">
+      <form action="" id="setNick" class="form-inline">
+        <div class="form-group col-12">
+        <h2>Ingresa tu nick</h>
+          <p id="nickError"></p>
+          <input type="text" class="form-control" size="35" id="nickname">
+          <button type="button" id="sendNick" class="btn btn-primary">Nickname</button>
+        </div>   
+      </form>
+    </div>
+  </section>
 
+  <section id="chat">
+      <div class="container-fluid contentWrap">       
+        <div class="row">
+          <div class="col-12">
+            <ul id="messages"></ul>
+          </div>
+        </div>  
+        <div class="row fixed-bottom">
+          <div class="col-12">
+            <form action="" id="formChat">
+              <div class="row">
+                <div class="col-9">
+                  <input id="m" autocomplete="off" />
+                </div>
+                <div class="col-3">
+                  <button class="btn btn-primary" id="send">Send</button>
+                </div>
+              </div>
+            </form>    
+          </div>
+        </div>
+      <div id="users"></div>
+    </div>
+  </section>
 
   <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
   <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
   <script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>  
   <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/app.js"></script>
   <script>
-    $(function () {
-      var socket = io('http://34.227.11.223:3000');
-      $('form').submit(function(){
-        socket.emit('chat message', $('#m').val());
-        $('#m').val('');
-        return false;
-      });
-      socket.on('chat message', function(msg){
-        $('#messages').append($('<li>').text(msg));
-      });
-    });
+   
   </script>
 </body>
 </html>
